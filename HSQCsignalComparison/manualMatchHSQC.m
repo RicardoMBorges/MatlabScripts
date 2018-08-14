@@ -35,6 +35,9 @@ for j=1:(aginput-1)
   hold on, scatter(H(j,1),H(j,2),'r')
 end
 %hold off; %zoom out; %saveas(gcf,[out,'.pdf'])
+    if (aginput-1)>(0.2*A)
+        disp([num2str(aginput-1),' match of ', num2str(A),' signals from ',out])
+    end
 end
 
 function out = getVarName(var)
