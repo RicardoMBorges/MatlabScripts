@@ -8,6 +8,8 @@ function [Z] = simulateHSQC_2D(HCdata, ppm1, ppm2)
 Z = zeros(length(ppm2),length(ppm1));
 for i = 1:length(HCdata);
     A = 1;
+        Ch=(find(HCdata(:,1)==0));  HCdata(Ch,:)=[];
+        Cc=(find(HCdata(:,2)==0));  HCdata(Cc,:)=[];
     x0 = HCdata(i,1); y0 = HCdata(i,2);
     sigma_x = 0.05; sigma_y = 0.05;
     [X, Y] = meshgrid(ppm1,ppm2);
